@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C96E4D9A28B8DF770008EE7F /* FavoritesCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E4D9928B8DF770008EE7F /* FavoritesCurrencyViewController.swift */; };
+		C96E4D9E28B8E8ED0008EE7F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C96E4D9C28B8E8ED0008EE7F /* DataModel.xcdatamodeld */; };
+		C96E4DA028B8FC300008EE7F /* ModelCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E4D9F28B8FC300008EE7F /* ModelCoreData.swift */; };
 		C9A2901C28B75D900033ACD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A2901B28B75D900033ACD3 /* AppDelegate.swift */; };
 		C9A2901E28B75D900033ACD3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A2901D28B75D900033ACD3 /* SceneDelegate.swift */; };
 		C9A2902528B75D910033ACD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9A2902428B75D910033ACD3 /* Assets.xcassets */; };
@@ -18,10 +21,12 @@
 		C9A2903C28B7CEF10033ACD3 /* CurrencySelectionScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A2903B28B7CEF10033ACD3 /* CurrencySelectionScreenTableViewCell.swift */; };
 		C9A2903E28B7F9DB0033ACD3 /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A2903D28B7F9DB0033ACD3 /* CurrencyTextField.swift */; };
 		C9AB0D2628B8988600DC8FCB /* StartLoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB0D2528B8988600DC8FCB /* StartLoadingScreenViewController.swift */; };
-		C9AB0D2928B8A07B00DC8FCB /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB0D2828B8A07B00DC8FCB /* UIStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C96E4D9928B8DF770008EE7F /* FavoritesCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCurrencyViewController.swift; sourceTree = "<group>"; };
+		C96E4D9D28B8E8ED0008EE7F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		C96E4D9F28B8FC300008EE7F /* ModelCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCoreData.swift; sourceTree = "<group>"; };
 		C9A2901828B75D900033ACD3 /* SWAppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SWAppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A2901B28B75D900033ACD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9A2901D28B75D900033ACD3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,7 +40,6 @@
 		C9A2903B28B7CEF10033ACD3 /* CurrencySelectionScreenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectionScreenTableViewCell.swift; sourceTree = "<group>"; };
 		C9A2903D28B7F9DB0033ACD3 /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
 		C9AB0D2528B8988600DC8FCB /* StartLoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartLoadingScreenViewController.swift; sourceTree = "<group>"; };
-		C9AB0D2828B8A07B00DC8FCB /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C96E4D9B28B8E25C0008EE7F /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				C96E4D9C28B8E8ED0008EE7F /* DataModel.xcdatamodeld */,
+				C96E4D9F28B8FC300008EE7F /* ModelCoreData.swift */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
 		C9A2900F28B75D900033ACD3 = {
 			isa = PBXGroup;
 			children = (
@@ -70,11 +83,11 @@
 			children = (
 				C9A2901B28B75D900033ACD3 /* AppDelegate.swift */,
 				C9A2901D28B75D900033ACD3 /* SceneDelegate.swift */,
+				C96E4D9B28B8E25C0008EE7F /* Data Model */,
 				C9A2902F28B75E880033ACD3 /* NetworkService */,
 				C9A2903228B75EC40033ACD3 /* Model */,
 				C9A2903328B75EDF0033ACD3 /* View */,
 				C9A2903428B75EE90033ACD3 /* Controller */,
-				C9AB0D2728B8A05B00DC8FCB /* Extension */,
 				C9A2902428B75D910033ACD3 /* Assets.xcassets */,
 				C9A2902628B75D910033ACD3 /* LaunchScreen.storyboard */,
 				C9A2902928B75D910033ACD3 /* Info.plist */,
@@ -113,16 +126,9 @@
 				C9AB0D2528B8988600DC8FCB /* StartLoadingScreenViewController.swift */,
 				C9A2903728B7C83D0033ACD3 /* CalculatorScreenViewController.swift */,
 				C9A2903928B7CBF10033ACD3 /* CurrencySelectionScreenViewController.swift */,
+				C96E4D9928B8DF770008EE7F /* FavoritesCurrencyViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		C9AB0D2728B8A05B00DC8FCB /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				C9AB0D2828B8A07B00DC8FCB /* UIStackView.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96E4D9E28B8E8ED0008EE7F /* DataModel.xcdatamodeld in Sources */,
 				C9A2901C28B75D900033ACD3 /* AppDelegate.swift in Sources */,
 				C9A2903828B7C83D0033ACD3 /* CalculatorScreenViewController.swift in Sources */,
 				C9AB0D2628B8988600DC8FCB /* StartLoadingScreenViewController.swift in Sources */,
@@ -202,8 +209,9 @@
 				C9A2903A28B7CBF10033ACD3 /* CurrencySelectionScreenViewController.swift in Sources */,
 				C9A2901E28B75D900033ACD3 /* SceneDelegate.swift in Sources */,
 				C9A2903128B75EAB0033ACD3 /* xmlParser.swift in Sources */,
-				C9AB0D2928B8A07B00DC8FCB /* UIStackView.swift in Sources */,
+				C96E4D9A28B8DF770008EE7F /* FavoritesCurrencyViewController.swift in Sources */,
 				C9A2903E28B7F9DB0033ACD3 /* CurrencyTextField.swift in Sources */,
+				C96E4DA028B8FC300008EE7F /* ModelCoreData.swift in Sources */,
 				C9A2903628B75F030033ACD3 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +424,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C96E4D9C28B8E8ED0008EE7F /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C96E4D9D28B8E8ED0008EE7F /* DataModel.xcdatamodel */,
+			);
+			currentVersion = C96E4D9D28B8E8ED0008EE7F /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C9A2901028B75D900033ACD3 /* Project object */;
 }

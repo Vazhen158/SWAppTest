@@ -14,8 +14,9 @@ class CalculatorScreenViewController: UIViewController {
     private let fromCurrencyLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .systemGray2
+        label.backgroundColor = .clear
         label.textColor = .black
+        label.text = "From: "
         label.font = .systemFont(ofSize: 12)
         label.textAlignment = .center
         label.layer.cornerRadius = 10
@@ -28,8 +29,9 @@ class CalculatorScreenViewController: UIViewController {
     
     private let toCurrencyLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .systemGray2
+        label.backgroundColor = .clear
         label.textColor = .black
+        label.text = "To: "
         label.font = .systemFont(ofSize: 12)
         label.textAlignment = .center
         label.layer.cornerRadius = 10
@@ -71,7 +73,7 @@ class CalculatorScreenViewController: UIViewController {
         
         setupConstraint()
     }
-    
+   
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fromCurrencyTextField.addTarget(self, action: #selector(updateViews), for: .editingChanged)

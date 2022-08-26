@@ -7,14 +7,15 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class StartLoadingScreenViewController: UIViewController {
-    
+
     private var currencies: [Currensy]?
-    
+    var item = [Item]()
     private let url = "https://www.cbr.ru/scripts/XML_daily.asp"
     private var fromCurrency = Currensy(numCode: "000", charCode: "RUR", nominal: 1, name: "Российский рубль", value: 1)
-    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     private var conteinerView:  UIView = {
         let view = UIView()
@@ -36,10 +37,9 @@ class StartLoadingScreenViewController: UIViewController {
     
     private let currencyConverterButton: UIButton = {
         let button = UIButton(type: .system)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
-        button.setBackgroundImage(UIImage(named: "arrow"), for: .normal)
-        button.titleLabel?.text = "Converter"
-        button.setTitleColor(.white, for: .normal)
+        button.setTitle("Currency Converter", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 18)
         button.layer.cornerRadius = 10
         button.backgroundColor = .gray
         button.addTarget(self, action: #selector(currencyConverterPress), for: .touchUpInside)
@@ -49,12 +49,10 @@ class StartLoadingScreenViewController: UIViewController {
     
     private let favoritesCurrencyButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setBackgroundImage(UIImage(named: "star"), for: .normal)
-        button.imageView?.contentMode = .scaleAspectFill
-        button.titleLabel?.text = "favorites"
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
-        button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10
+        button.setTitle("Favorites", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 18)
         button.backgroundColor = .gray
         button.addTarget(self, action: #selector(favoritesCurrencyPress), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -95,6 +93,17 @@ class StartLoadingScreenViewController: UIViewController {
         }
     }
     
+    func saveItems() {
+
+        do {
+          try context.save()
+        } catch {
+           print("Error saving context \(error)")
+        }
+
+        self.startScreenTableView.reloadData()
+    }
+    
     @objc func currencyConverterPress() {
         self.navigationController?.pushViewController(CalculatorScreenViewController(), animated: true)
     }
@@ -102,24 +111,23 @@ class StartLoadingScreenViewController: UIViewController {
     @objc func favoritesCurrencyPress() {
         
     }
-    
-    
+
     private func setConstraint() {
         NSLayoutConstraint.activate([
             conteinerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             conteinerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             conteinerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            conteinerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.75),
+            conteinerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7),
              
-            favoritesCurrencyButton.topAnchor.constraint(equalTo: conteinerView.bottomAnchor, constant: 20),
-            favoritesCurrencyButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+            favoritesCurrencyButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            favoritesCurrencyButton.trailingAnchor.constraint(equalTo: conteinerView.trailingAnchor, constant: 0),
             favoritesCurrencyButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.055),
-            favoritesCurrencyButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3),
+            favoritesCurrencyButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.35),
             
-            currencyConverterButton.topAnchor.constraint(equalTo: conteinerView.bottomAnchor, constant: 20),
-            currencyConverterButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            currencyConverterButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            currencyConverterButton.leadingAnchor.constraint(equalTo: conteinerView.leadingAnchor, constant: 0),
             currencyConverterButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.055),
-            currencyConverterButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3)
+            currencyConverterButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.45)
         ])
         
     }
@@ -144,5 +152,8 @@ extension StartLoadingScreenViewController: UITableViewDataSource, UITableViewDe
         return 120
     }
     
-    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        <#code#>
+//    }
+//    
 }

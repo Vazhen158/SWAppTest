@@ -26,6 +26,30 @@ class CurrencySelectionScreenViewController: UIViewController {
     var fromSelectionDelegate: FromSelectionDelegate!
     var toSelectionDelegate: ToSelectionDelegate!
     
+    private let fromCurrencySelectLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .clear
+        label.textColor = .black
+        label.text = "From: "
+        label.font = .systemFont(ofSize: 18)
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private let toCurrencySelectLabel: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = .clear
+        label.textColor = .black
+        label.text = "To: "
+        label.font = .systemFont(ofSize: 18)
+        label.textAlignment = .left
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        return label
+    }()
+    
     private var conteinerView:  UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -71,6 +95,8 @@ class CurrencySelectionScreenViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(conteinerView)
         view.addSubview(conteinerViewTwo)
+        view.addSubview(fromCurrencySelectLabel)
+        view.addSubview(toCurrencySelectLabel)
         conteinerView.addSubview(fromCurrenciesTableView)
         conteinerViewTwo.addSubview(toCurrenciesTableView)
         setConstraint()
@@ -108,16 +134,23 @@ class CurrencySelectionScreenViewController: UIViewController {
     func setConstraint() {
         NSLayoutConstraint.activate([
             
+            fromCurrencySelectLabel.leadingAnchor.constraint(equalTo: conteinerView.leadingAnchor, constant: 0),
+            fromCurrencySelectLabel.widthAnchor.constraint(equalTo: conteinerView.widthAnchor, multiplier: 0.35),
+            fromCurrencySelectLabel.bottomAnchor.constraint(equalTo: conteinerView.topAnchor, constant: -15),
+            
             conteinerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             conteinerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            conteinerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
-            conteinerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4),
+            conteinerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
+            conteinerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.35),
+            
+            toCurrencySelectLabel.leadingAnchor.constraint(equalTo: conteinerViewTwo.leadingAnchor, constant: 0),
+            toCurrencySelectLabel.widthAnchor.constraint(equalTo: conteinerViewTwo.widthAnchor, multiplier: 0.35),
+            toCurrencySelectLabel.bottomAnchor.constraint(equalTo: conteinerViewTwo.topAnchor, constant: -15),
             
             conteinerViewTwo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             conteinerViewTwo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            conteinerViewTwo.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
-            conteinerViewTwo.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4),
-            
+            conteinerViewTwo.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
+            conteinerViewTwo.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.35),
             
             fromCurrenciesTableView.leadingAnchor.constraint(equalTo: conteinerView.leadingAnchor, constant: 0),
             fromCurrenciesTableView.trailingAnchor.constraint(equalTo: conteinerView.trailingAnchor, constant: 0),
@@ -153,12 +186,14 @@ extension CurrencySelectionScreenViewController: UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+   
+        var currentItem = currencies?[indexPath.row]
+        currentItem?.selected = true
+            tableView.reloadData()
         
         tableView.deselectRow(at: indexPath, animated: true)
-        
         if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
-            
         } else {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
         }

@@ -13,5 +13,5 @@ struct Currensy: Codable {
     var nominal: Int
     var name: String
     var value: Double
-  
+    var selected = false
 }
