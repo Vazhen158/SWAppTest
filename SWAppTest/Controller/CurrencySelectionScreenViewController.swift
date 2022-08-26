@@ -66,6 +66,7 @@ class CurrencySelectionScreenViewController: UIViewController {
         //        toCurrenciesTableView.delegate = self
         //        toCurrenciesTableView.dataSource = self
     }
+    
     private func fetchData() {
         let parser = CurrensyParser()
         parser.parseСurrencies(url: url) { (currensies) in
@@ -111,7 +112,7 @@ extension CurrencySelectionScreenViewController: UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 120
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

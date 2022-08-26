@@ -17,6 +17,7 @@
 		C9A2903A28B7CBF10033ACD3 /* CurrencySelectionScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A2903928B7CBF10033ACD3 /* CurrencySelectionScreenViewController.swift */; };
 		C9A2903C28B7CEF10033ACD3 /* CurrencySelectionScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A2903B28B7CEF10033ACD3 /* CurrencySelectionScreenTableViewCell.swift */; };
 		C9A2903E28B7F9DB0033ACD3 /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A2903D28B7F9DB0033ACD3 /* CurrencyTextField.swift */; };
+		C9AB0D2628B8988600DC8FCB /* StartLoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB0D2528B8988600DC8FCB /* StartLoadingScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C9A2903928B7CBF10033ACD3 /* CurrencySelectionScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectionScreenViewController.swift; sourceTree = "<group>"; };
 		C9A2903B28B7CEF10033ACD3 /* CurrencySelectionScreenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectionScreenTableViewCell.swift; sourceTree = "<group>"; };
 		C9A2903D28B7F9DB0033ACD3 /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
+		C9AB0D2528B8988600DC8FCB /* StartLoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartLoadingScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		C9A2903428B75EE90033ACD3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C9AB0D2528B8988600DC8FCB /* StartLoadingScreenViewController.swift */,
 				C9A2903728B7C83D0033ACD3 /* CalculatorScreenViewController.swift */,
 				C9A2903928B7CBF10033ACD3 /* CurrencySelectionScreenViewController.swift */,
 			);
@@ -183,6 +186,7 @@
 			files = (
 				C9A2901C28B75D900033ACD3 /* AppDelegate.swift in Sources */,
 				C9A2903828B7C83D0033ACD3 /* CalculatorScreenViewController.swift in Sources */,
+				C9AB0D2628B8988600DC8FCB /* StartLoadingScreenViewController.swift in Sources */,
 				C9A2903C28B7CEF10033ACD3 /* CurrencySelectionScreenTableViewCell.swift in Sources */,
 				C9A2903A28B7CBF10033ACD3 /* CurrencySelectionScreenViewController.swift in Sources */,
 				C9A2901E28B75D900033ACD3 /* SceneDelegate.swift in Sources */,
