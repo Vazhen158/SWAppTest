@@ -18,6 +18,7 @@
 		C9A2903C28B7CEF10033ACD3 /* CurrencySelectionScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A2903B28B7CEF10033ACD3 /* CurrencySelectionScreenTableViewCell.swift */; };
 		C9A2903E28B7F9DB0033ACD3 /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A2903D28B7F9DB0033ACD3 /* CurrencyTextField.swift */; };
 		C9AB0D2628B8988600DC8FCB /* StartLoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB0D2528B8988600DC8FCB /* StartLoadingScreenViewController.swift */; };
+		C9AB0D2928B8A07B00DC8FCB /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB0D2828B8A07B00DC8FCB /* UIStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		C9A2903B28B7CEF10033ACD3 /* CurrencySelectionScreenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectionScreenTableViewCell.swift; sourceTree = "<group>"; };
 		C9A2903D28B7F9DB0033ACD3 /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
 		C9AB0D2528B8988600DC8FCB /* StartLoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartLoadingScreenViewController.swift; sourceTree = "<group>"; };
+		C9AB0D2828B8A07B00DC8FCB /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				C9A2903228B75EC40033ACD3 /* Model */,
 				C9A2903328B75EDF0033ACD3 /* View */,
 				C9A2903428B75EE90033ACD3 /* Controller */,
+				C9AB0D2728B8A05B00DC8FCB /* Extension */,
 				C9A2902428B75D910033ACD3 /* Assets.xcassets */,
 				C9A2902628B75D910033ACD3 /* LaunchScreen.storyboard */,
 				C9A2902928B75D910033ACD3 /* Info.plist */,
@@ -112,6 +115,14 @@
 				C9A2903928B7CBF10033ACD3 /* CurrencySelectionScreenViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		C9AB0D2728B8A05B00DC8FCB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C9AB0D2828B8A07B00DC8FCB /* UIStackView.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +202,7 @@
 				C9A2903A28B7CBF10033ACD3 /* CurrencySelectionScreenViewController.swift in Sources */,
 				C9A2901E28B75D900033ACD3 /* SceneDelegate.swift in Sources */,
 				C9A2903128B75EAB0033ACD3 /* xmlParser.swift in Sources */,
+				C9AB0D2928B8A07B00DC8FCB /* UIStackView.swift in Sources */,
 				C9A2903E28B7F9DB0033ACD3 /* CurrencyTextField.swift in Sources */,
 				C9A2903628B75F030033ACD3 /* Model.swift in Sources */,
 			);

@@ -23,9 +23,7 @@ class CurrencySelectionScreenTableViewCell: UITableViewCell {
         label.numberOfLines = 0
         return label
     }()
-    
-  
-    
+
     private let charCodeCurrencyLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
@@ -93,7 +91,7 @@ class CurrencySelectionScreenTableViewCell: UITableViewCell {
     public func configureLoadingScreen(with model: Currensy) {
         nameCurrencyLabel.text = model.name
         charCodeCurrencyLabel.text = "(\(model.charCode))"
-        valueCurrencyLabel.text = String(model.value) + "(RUB)"
+        valueCurrencyLabel.text = String(model.value) + " (RUB)"
     }
     
     

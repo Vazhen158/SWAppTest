@@ -14,24 +14,28 @@ class CalculatorScreenViewController: UIViewController {
     private let fromCurrencyLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .green
+        label.backgroundColor = .systemGray2
         label.textColor = .black
         label.font = .systemFont(ofSize: 12)
         label.textAlignment = .center
         label.layer.cornerRadius = 10
         label.clipsToBounds = true
+        label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.gray.cgColor
         label.numberOfLines = 0
         return label
     }()
     
     private let toCurrencyLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .green
+        label.backgroundColor = .systemGray2
         label.textColor = .black
         label.font = .systemFont(ofSize: 12)
         label.textAlignment = .center
         label.layer.cornerRadius = 10
         label.clipsToBounds = true
+        label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.gray.cgColor
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         return label
@@ -46,8 +50,7 @@ class CalculatorScreenViewController: UIViewController {
         button.backgroundColor = .gray
         button.addTarget(self, action: #selector(currencySelectionPress), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-        
+        return button        
     }()
     
     private var fromCurrencyTextField = CurrencyTextField()
