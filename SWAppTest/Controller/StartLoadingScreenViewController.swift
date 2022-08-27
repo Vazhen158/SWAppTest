@@ -10,9 +10,10 @@ import UIKit
 import CoreData
 
 class StartLoadingScreenViewController: UIViewController {
-
+    
+    private var currencyCDManager = CurrencyCDManager44()
     private var currencies: [Currensy]?
-    var item = [Item]()
+    //var item = [Item]()
     private let url = "https://www.cbr.ru/scripts/XML_daily.asp"
     private var fromCurrency = Currensy(numCode: "000", charCode: "RUR", nominal: 1, name: "Российский рубль", value: 1)
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -70,6 +71,7 @@ class StartLoadingScreenViewController: UIViewController {
         setConstraint()
         currencyTableConfigure()
         fetchData()
+        alert()
     }
     
     override func viewDidLayoutSubviews() {
@@ -93,23 +95,27 @@ class StartLoadingScreenViewController: UIViewController {
         }
     }
     
-    func saveItems() {
-
-        do {
-          try context.save()
-        } catch {
-           print("Error saving context \(error)")
+    func alert () {
+        let alert = UIAlertController(title: "Click on the currency you like to add it to your favorites", message: "", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Ok", style: .default) { (action) in
         }
-
-        self.startScreenTableView.reloadData()
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
+    func alertSave() {
+        let alert = UIAlertController(title: "Save in Favorites", message: "", preferredStyle: .alert)
+        present(alert, animated: true, completion: nil)
+        dismiss(animated: true)
+    }
+    
     
     @objc func currencyConverterPress() {
         self.navigationController?.pushViewController(CalculatorScreenViewController(), animated: true)
     }
    
     @objc func favoritesCurrencyPress() {
-        
+        self.navigationController?.pushViewController(FavoritesCurrencyViewController(), animated: true)
     }
 
     private func setConstraint() {
@@ -152,8 +158,18 @@ extension StartLoadingScreenViewController: UITableViewDataSource, UITableViewDe
         return 120
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
-//    }
-//    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        startScreenTableView.deselectRow(at: indexPath, animated: true)
+        
+        let currenciesFavorites = currencies?[indexPath.row]
+        currencyCDManager.addTermin(name: currenciesFavorites?.name ?? "", charCode: currenciesFavorites?.charCode ?? "", value: currenciesFavorites?.value ?? 1)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(300)) {
+            self.alertSave()
+        }
+    }
+    
+    
 }
+
+

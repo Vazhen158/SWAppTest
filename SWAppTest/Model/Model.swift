@@ -8,9 +8,9 @@
 import Foundation
 
 struct Currensy: Codable {
-    var numCode: String
+    var numCode: String?
     var charCode: String
-    var nominal: Int
+    var nominal: Int?
     var name: String
     var value: Double
     var selected = false

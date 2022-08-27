@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C96E4D9A28B8DF770008EE7F /* FavoritesCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E4D9928B8DF770008EE7F /* FavoritesCurrencyViewController.swift */; };
-		C96E4D9E28B8E8ED0008EE7F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C96E4D9C28B8E8ED0008EE7F /* DataModel.xcdatamodeld */; };
 		C96E4DA028B8FC300008EE7F /* ModelCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E4D9F28B8FC300008EE7F /* ModelCoreData.swift */; };
 		C9A2901C28B75D900033ACD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A2901B28B75D900033ACD3 /* AppDelegate.swift */; };
 		C9A2901E28B75D900033ACD3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A2901D28B75D900033ACD3 /* SceneDelegate.swift */; };
@@ -21,6 +20,7 @@
 		C9A2903C28B7CEF10033ACD3 /* CurrencySelectionScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A2903B28B7CEF10033ACD3 /* CurrencySelectionScreenTableViewCell.swift */; };
 		C9A2903E28B7F9DB0033ACD3 /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A2903D28B7F9DB0033ACD3 /* CurrencyTextField.swift */; };
 		C9AB0D2628B8988600DC8FCB /* StartLoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB0D2528B8988600DC8FCB /* StartLoadingScreenViewController.swift */; };
+		C9F09DBF28B9B61C0027696A /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C96E4D9C28B8E8ED0008EE7F /* DataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -201,7 +201,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C96E4D9E28B8E8ED0008EE7F /* DataModel.xcdatamodeld in Sources */,
 				C9A2901C28B75D900033ACD3 /* AppDelegate.swift in Sources */,
 				C9A2903828B7C83D0033ACD3 /* CalculatorScreenViewController.swift in Sources */,
 				C9AB0D2628B8988600DC8FCB /* StartLoadingScreenViewController.swift in Sources */,
@@ -211,6 +210,7 @@
 				C9A2903128B75EAB0033ACD3 /* xmlParser.swift in Sources */,
 				C96E4D9A28B8DF770008EE7F /* FavoritesCurrencyViewController.swift in Sources */,
 				C9A2903E28B7F9DB0033ACD3 /* CurrencyTextField.swift in Sources */,
+				C9F09DBF28B9B61C0027696A /* DataModel.xcdatamodeld in Sources */,
 				C96E4DA028B8FC300008EE7F /* ModelCoreData.swift in Sources */,
 				C9A2903628B75F030033ACD3 /* Model.swift in Sources */,
 			);

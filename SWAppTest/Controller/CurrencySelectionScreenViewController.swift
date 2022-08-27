@@ -86,9 +86,7 @@ class CurrencySelectionScreenViewController: UIViewController {
         table.register(CurrencySelectionScreenTableViewCell.self, forCellReuseIdentifier: CurrencySelectionScreenTableViewCell.identifier)
         return table
     }()
-    
-    
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Select currency"
@@ -200,13 +198,10 @@ extension CurrencySelectionScreenViewController: UITableViewDataSource, UITableV
         
         if tableView == fromCurrenciesTableView {
             fromSelectionDelegate.didSelectFrom(currencies: currencies?[indexPath.row])
-            
         }
         if tableView == toCurrenciesTableView {
             toSelectionDelegate.didSelectTo(currencies:  currencies?[indexPath.row])
-            
+     
         }
-        
     }
-    
 }

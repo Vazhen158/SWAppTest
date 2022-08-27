@@ -7,18 +7,11 @@
 
 import CoreData
 
-//class FavoritesCurrency: NSManagedObject {
-//    @NSManaged var name: String
-//    @NSManaged var charCode: String
-//    @NSManaged var valute: Double
-//    @NSManaged var selected: Bool
-//}
-class TerminsCDManager44 {
+class CurrencyCDManager44 {
     
-    var allTermins: [Item] = []
-    
+    var allCurrency: [Item] = []
     let persistantContainer: NSPersistentContainer
-    
+
     init() {
         persistantContainer = NSPersistentContainer(name: "DataModel")
         persistantContainer.loadPersistentStores { (_, error) in
@@ -26,62 +19,61 @@ class TerminsCDManager44 {
                 fatalError("error while init termins VM CD \(error.localizedDescription)")
             }
         }
-        
-        loadTermins()
 
-        saveTerminsData()
+        loadCurrency()
+
+        saveCurrencyData()
     }
-    
-    
-    
-    func saveTerminsData() {
+
+    func saveCurrencyData() {
         
         do {
             try persistantContainer.viewContext.save()
-            loadTermins()
+            loadCurrency()
         } catch let error {
-            fatalError("CDManagerTerminsVM saving error \(error.localizedDescription)")
+            fatalError("DataModel saving error \(error.localizedDescription)")
         }
-        print("termins saved sucsessfully")
+        print("Currensy saved sucsessfully")
     }
-    
-    
-    
-     func loadTermins() {
-        let request = NSFetchRequest<Item>(entityName: "DataModel")
+
+    func loadCurrency() {
+        let request = NSFetchRequest<Item>(entityName: "Item")
         
         do {
-            allTermins = try persistantContainer.viewContext.fetch(request)
+            allCurrency = try persistantContainer.viewContext.fetch(request)
         } catch let error {
-            fatalError("CDManagerTerminsVM fetch failed with error \(error.localizedDescription)")
+            fatalError("DataModel fetch failed with error \(error.localizedDescription)")
         }
     }
     
-     func addTermin(cathegory: String) {
+    func addTermin(name: String, charCode: String, value: Double) {
         
-        let newTermin = Item(context: persistantContainer.viewContext)
+        let newCurrency = Item(context: persistantContainer.viewContext)
+        newCurrency.name = name
+        newCurrency.charCode = charCode
+        newCurrency.value = value
+        saveCurrencyData()
+
+        print("Currency added sucsessfully")
         
-        newTermin.name = cathegory
-        
-        saveTerminsData()
-        print("termin added sucsessfully")
     }
     
-     func deleteAllTermins() {
-        let request = NSFetchRequest<Item>(entityName: "DataModel")
+    func deleteAllCurrency() {
+        let request = NSFetchRequest<Item>(entityName: "Item")
         
         do {
-            let deleteTermins = try persistantContainer.viewContext.fetch(request)
+            let deleteCurrency = try persistantContainer.viewContext.fetch(request)
             
-            for termin in deleteTermins {
-                persistantContainer.viewContext.delete(termin)
+            for currency in deleteCurrency {
+                persistantContainer.viewContext.delete(currency)
+                
             }
-            
-            saveTerminsData()
+            saveCurrencyData()
+          
             
         } catch let error {
-            fatalError("CDManagerTerminsVM deleting error \(error.localizedDescription)")
+            fatalError("DataModel deleting error \(error.localizedDescription)")
         }
-        print("termins deleted sucsessfully")
+        print("Currency deleted sucsessfully")
     }
 }
